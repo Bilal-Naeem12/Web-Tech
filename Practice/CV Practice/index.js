@@ -32,6 +32,3 @@ let progress = 0;
 
 }
 
-function simulateProgress() {
-    
-  }
