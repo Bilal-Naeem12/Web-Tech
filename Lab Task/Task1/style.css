@@ -66,3 +66,7 @@ div.gallery {
 
   height: 40px;
 }
+
+.error{
+  border: 4px solid rgba(197, 22, 22, 0.592);
+}

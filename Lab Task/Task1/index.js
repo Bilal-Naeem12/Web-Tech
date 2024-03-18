@@ -1,41 +1,30 @@
-// https://image.tmdb.org/t/p/original
 
-function displayStories() {
-    $.ajax({
-      url: "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US&page=2",
-      method: "GET",
-      dataType: "json",
-      success: function (data) {
-        var photos = $("#photos");
-        photos.empty();
-        console.log("hello")
-        $.each(data?.results, function (index, movie) {
-            console.log(movie?.poster_path)
-            photos.append(
-            ` <div class="responsive mb-4 ">
-            <div class="gallery">
-          
-                <img src="https://image.tmdb.org/t/p/original${movie?.poster_path}" alt="Forest">
-              
-              <div class="desc">${movie?.overview.slice(0,50)}</div>
-            </div>
-              `
-          );
-        });
-      },
-      error: function (error) {
-        console.error("Error fetching stories:", error);
-      },
-    });
-  }
+    var inputs =  $("input")
+    var textarea =  $("textarea")
 
-$(document).ready(
-    function (){
+console.log("connected")
+function handle_error(){
 
-
-        displayStories();
-
-
-
+    if(  $("textarea").val() == ""){
+        $(textarea).addClass("error")
+    }else{
+        $(textarea).removeClass("error")
     }
-)
+    $.each(inputs, function (index, input) {
+     
+        if(input.value  == "")
+        {
+            $(input).addClass("error")
+        }
+        else{
+            $(input).removeClass("error")
+        }
+
+  })
+  
+}
+$(document).ready(function (){
+
+    $("#send-btn").click(handle_error);
+    
+})
