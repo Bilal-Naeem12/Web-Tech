@@ -12,25 +12,6 @@ return !!urlPattern.test(urlString);
 
 
 
-function dummyfunc(){
-  var photos = $("#photos");
-  console.log("hello")
-  $.each(dummy_data?.results, function (index, movie) {
-      console.log(movie?.poster_path)
-      photos.append(
-      ` <div class="responsive  ">
-      <div class="gallery">
-          
-          <img src="https://image.tmdb.org/t/p/original${movie?.poster_path}" alt="Forest">
-        
-        <div class="desc">${movie?.overview.slice(0,40)}</div>
-      </div>
-        `
-    );
-  });
-}
-
-
 
 function displayPhotosBytmdb() {
     $.ajax({
