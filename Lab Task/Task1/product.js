@@ -99,7 +99,7 @@ function displayPhotosBytmdb() {
 
 
 function deleteHandleFunc(){
-  let storyId = $(this).attr("data-id");
+  let storyId = $(this).attr("movie-id");
   $.ajax({
     url: "https://usmanlive.com/wp-json/api/stories/" + storyId,
     method: "DELETE",
@@ -111,7 +111,7 @@ function deleteHandleFunc(){
     },
   });
   $("#alert").append(` <div class="alert alert-success alert-dismissible fade show collapse position-absolute w-100" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <strong>Record Deleted!</strong> Successfully yahooo!!.
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>`)
 
@@ -167,14 +167,32 @@ function updateHandleFunc(event)
     },
   });
 }
+function createHandleFunc(event)
+{
+  event.preventDefault();
+  let title = $("#createUrl").val();
+  let content = $("#createDesc").val();
+ console.log(title,content)
+  $.ajax({
+    url: "https://usmanlive.com/wp-json/api/stories" ,
+    method: "POST",
+    data: {title,content},
+    success: function () {
+      callApi()
+    },
+    error: function (error) {
+      console.error("Error creating moive:", error);
+    },
+  });
+}
 
 $(document).ready(
     function (){
   
       callApi()
    
-     
-      $(document).on("click","#close-btn",deleteHandleFunc)
+      $(document).on("click","#createBtn",createHandleFunc)
+      $(document).on("click","#delete-btn",deleteHandleFunc)
       $(document).on("click","#edit-btn",editHandleFunc)
       $(document).on("click","#update-btn",updateHandleFunc)
      
