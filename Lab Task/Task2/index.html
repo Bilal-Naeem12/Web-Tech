@@ -14,6 +14,8 @@
 </head>
 
 <body>
+
+ 
   <!-- main div -->
   <div class="   main  ">
     <div class="header  bg-transparent position-sticky top-0  w-100  z-3   ">
@@ -36,6 +38,8 @@
 
         </div>
       </div>
+    
+      
     </div>
     <div class="inner-body d-flex align-items-center  p-4 position-relative  ">
       <!-- cover img -->
@@ -56,14 +60,15 @@
 
     </div>
   <!-- Products -->
-  <div class="products container d-flex flex-column  py-4 justify-content-center align-items-center ">
+  <div class="products container d-flex flex-column py-4 justify-content-center align-items-center ">
     <h1>
       Products
     </h1>
-    <div class="gallery-img my-4">
+    <div class="gallery-img d-flex  justify-content-center flex-md-row   flex-column   align-items-center ">
       <div class="responsive">
-        <div class="gallery">
-         
+        <div class="gallery position-relative ">
+            <div class="edit-btn position-absolute p-2 text-bg-secondary      fs-6 rounded-circle  " data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-pencil"></i></div>
+            <button id="close-btn" class="delete-btn position-absolute p-2  text-bg-danger border-0    fs-6 rounded-circle  " ><i class="fa-solid fa-trash"></i></button>
             <img src="https://ik.imagekit.io/theartling/prod/tr:w-520,h-520,bg-FFFFFF/products/Product/76c4c93dad6b4d84a807368848ada320_sw-1429_sh-2334.JPG" alt="Cinque Terre">
           
           <div class="desc">Add a description of the image here</div>
@@ -151,7 +156,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
+    
+
+
       <script src="./index.js"></script>
+
+    
 </body>
 
 </html>
