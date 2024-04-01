@@ -1,0 +1,47 @@
+.lower-nav li a {
+
+    color: grey;
+    font-weight: 100;
+}
+
+a{
+    all: unset;
+    cursor: pointer;
+
+}
+
+a:hover{
+    color: rgb(255, 55, 0);
+}
+h3
+{
+    font-size: 1.2rem;
+}
+
+.right a 
+{
+    color: gray;
+}
+
+#heading-link{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+
+.right img{
+    width: 100%;
+    height: 200px;
+}
+
+.bottom .main-img-card{
+width: 31%;
+}
+
+footer{
+    height: 500px;
+    background-color: rgb(21, 20, 20);
+}
+.foot{
+ gap: 10%;   
+}
