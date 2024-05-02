@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
-
+var Watches = require("../modal/Watch")
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+router.get('/',async function(req, res) {
+  const products = await Watches.find().limit(4)
+  console.log(products)
+  res.render('index',{products : products});
 });
 
 module.exports = router;

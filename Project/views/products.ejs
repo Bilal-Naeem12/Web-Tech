@@ -14,54 +14,9 @@
   
 </head>
 <body>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Something</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="createForm">
-            <div class="form-group">
-              <label for="createContent">Description:</label>
-              <textarea id="update-text-area" class="form-control my-2 " id="createContent" rows="3" required>Enter Description</textarea>
-          </div>
-        </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button id="update-btn" type="button" class="btn btn-dark ">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
  
-  
-    <div class="header    bg-transparent top-0  w-100  z-3 position-sticky   ">
-        <div
-          class="navbar  d-flex  fs-   bg-light shadow-lg      justify-content-around   text-dark align-items-center  text-light gap-5    ">
-          <div class="logo">
-           <span><img src="/images/logoside.jpg" alt="" id="sideLogo"> <img src="/images/logo.png" ></span>
-          </div>
-          <div class="clicklink fw-semibold  d-none  p  d-md-flex   gap-3  justify-content-center align-items-center ">
-           <a href="/"><div class="link">Home</div></a> 
-           <a href="/products"><div class="link">Products</div></a>
-           <a href="#"><div class="link">About</div></a> 
-           <a href="#"><div class="link">Contact Us</div></a> 
-            <div></div>
-          </div>
-          <div class="icons d-flex gap-3">
-            <i class="fa-solid fa-user"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-solid fa-bars"></i>
-  
-          </div>
-        </div>
-        <div id="alert">
-          
-      </div>
-      </div>
+  <%- include("navbar")  %>
       <div class="body container my-5 ">
         <div class="heading d-flex justify-content-center align-items-center ">
             <h1>Products</h1>
