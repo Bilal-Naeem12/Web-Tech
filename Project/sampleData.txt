@@ -1,0 +1,146 @@
+[
+  {
+    "title": "Fossil Men’s Chronograph Silver Stainless Steel Grey Dial 44mm Watch FS5407",
+    "image_url": "https://royalwrist.pk/wp-content/uploads/2022/03/1-317-300x300.jpg",
+    "price": "₨22,500",
+    "brand": "Fossil"
+  },
+  {
+    "title": "Hugo Boss Men’s Chronograph Quartz Stainless Steel Grey Dial 44mm Watch 1513634",
+    "image_url": "https://royalwrist.pk/wp-content/uploads/2022/03/cats-42-300x300.jpg",
+    "price": "₨27,560",
+    "brand": "Hugo Boss"
+  },
+  {
+    "title": "Tommy Hilfiger Men’s Quartz Gold-Tone Leather Strap 44mm Watch 1791291",
+    "image_url": "https://royalwrist.pk/wp-content/uploads/2022/03/1-63-300x300.jpg",
+    "price": "₨20,626",
+    "brand": "Tommy Hilfiger"
+  },
+  {
+    "title": "Jeep Men’s Quartz Black Leather Strap Black Dial 44mm Watch JP15402",
+    "image_url": "https://royalwrist.pk/wp-content/uploads/2023/05/1-101-300x300.png",
+    "price": "₨13,900",
+    "brand": "Jeep"
+  },
+  {
+    "title": "Hugo Boss Men’s Quartz Leather Strap Black Dial 45mm Watch 1513753",
+    "image_url": "https://royalwrist.pk/wp-content/uploads/2021/12/1513753_LRG_rgb_Web-300x300.jpg",
+    "price": "₨32,000",
+    "brand": "Hugo Boss"
+  },
+  {
+    "title": "Versace Men’s Quartz Swiss Made Black Leather Strap White Dial 44mm Watch VDB040014",
+    "image_url": "https://royalwrist.pk/wp-content/uploads/2024/04/1-50-300x300.jpg",
+    "price": "₨72,500",
+    "brand": "Versace"
+  },
+  {
+    "title": "Guess Men’s Quartz Silver Stainless Steel Black Dial 44mm Watch GW0582G1",
+    "image_url": "https://royalwrist.pk/wp-content/uploads/2024/01/1-21-300x300.jpg",
+    "price": "₨28,600",
+    "brand": "Guess"
+  },
+  {
+    "title": "Tag Heuer Aquaracer Men’s Automatic Swiss Made Silver Stainless Steel Blue Dial 41mm Watch WAN2111.BA0822",
+    "image_url": "https://royalwrist.pk/wp-content/uploads/2023/10/1-88-300x300.jpg",
+    "price": "₨342,000",
+    "brand": "Tag Heuer"
+  },
+  {
+    "title": "Emporio Armani Men’s Quartz Leather Strap White Dial 43mm Watch AR1936",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨28,000",
+    "brand": "Emporio Armani"
+  },
+  {
+    "title": "Tommy Hilfiger Men’s Quartz Stainless Steel Blue Dial 44mm Watch 1791228",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨21,060",
+    "brand": "Tommy Hilfiger"
+  },
+  {
+    "title": "Armani Exchange Men’s Quartz Blue Nylon Strap Silver Dial 45mm Watch AX1609",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨23,999",
+    "brand": "Armani Exchange"
+  },
+  {
+    "title": "Tag Heuer Aquaracer Men’s Quartz Swiss Made Silver Stainless Steel Blue Dial 41mm Watch WAY111C.BA0928",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨335,000",
+    "brand": "Tag Heuer"
+  },
+  {
+    "title": "TISSOT Men’s Swiss Made Quartz Brown Leather Strap Silver Dial 42mm Watch T101.610.16.031.00",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨72,000",
+    "brand": "Tissot"
+  },
+  {
+    "title": "Tommy Hilfiger Men’s Quartz Silicone Strap Blue Dial 44mm Watch 1791482",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨19,933",
+    "brand": "Tommy Hilfiger"
+  },
+  {
+    "title": "Tommy Hilfiger Men’s Quartz Black Silicone Strap Black Dial 44mm Watch 1791636",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨21,233",
+    "brand": "Tommy Hilfiger"
+  },
+  {
+    "title": "Emporio Armani Men’s Quartz Leather Strap Grey Dial 42mm Watch AR11162",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨22,100",
+    "brand": "Emporio Armani"
+  },
+  {
+    "title": "Emporio Armani Men’s Quartz Leather Strap Black Dial 43mm Watch AR0397",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨26,500",
+    "brand": "Emporio Armani"
+  },
+  {
+    "title": "Michael Kors Men’s Stainless Steel Blue Dial 45mm Watch MK8267",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨26,200",
+    "brand": "Michael Kors"
+  },
+  {
+    "title": "Diesel Men’s Quartz Green Leather Strap Blue Dial 46mm Watch DZ1718",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨24,000",
+    "brand": "Diesel"
+  },
+  {
+    "title": "Armani Exchange Men’s Quartz Black Stainless Steel Red Dial 40mm Watch AX2255",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨24,300",
+    "brand": "Armani Exchange"
+  },
+  {
+    "title": "Gucci Men’s Swiss Made Quartz Leather Strap Multi Dial 38mm Watch YA1264079",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨71,000",
+    "brand": "Gucci"
+  },
+  {
+    "title": "Tommy Hilfiger Men’s Quartz Stainless Steel Blue Dial 44mm Watch 1710432",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨20,800",
+    "brand": "Tommy Hilfiger"
+  },
+  {
+    "title": "Emporio Armani Men’s Quartz Stainless Steel 43mm Watch AR11047",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨25,966",
+    "brand": "Emporio Armani"
+  },
+  {
+    "title": "Hugo Boss Men’s Chronograph Quartz Stainless Steel Green Dial 44mm Watch 1513872",
+    "image_url": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E",
+    "price": "₨27,993",
+    "brand": "Hugo Boss"
+  }
+]
