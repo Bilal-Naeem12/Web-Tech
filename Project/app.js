@@ -3,7 +3,7 @@ var mongoose = require('mongoose')
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 const Watches = require("./modal/Watch")
-mongoose.connect("mongodb://localhost:27017/SemsterProject").then(()=>{
+mongoose.connect("mongodb://127.0.0.1:27017/SemsterProject").then(()=>{
   console.log("connected")
 })
 

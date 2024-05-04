@@ -23,11 +23,19 @@ function handle_error(){
   })
   
 }
+
+function truncateTitle(title) {
+    const words = title.split(' ');
+    if (words.length > 20) {
+      return words.slice(0, 20).join(' ') + '...';
+    }
+    return title;
+  }
 $(document).ready(function (){
 
     $("#send-btn").click(handle_error);
   
+  
 
- 
  
 })

@@ -4,7 +4,7 @@ var Watches = require("../modal/Watch")
 /* GET home page. */
 router.get('/',async function(req, res) {
   const products = await Watches.find().limit(4)
-  console.log(products)
+ 
   res.render('index',{products : products});
 });
 

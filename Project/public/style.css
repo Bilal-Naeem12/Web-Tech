@@ -1,4 +1,5 @@
 *{
+  transition: all 0.5s ease-in-out;
     margin: 0  ;
     padding: 0 ;
     box-sizing: border-box;
@@ -8,7 +9,14 @@ a{
   cursor: pointer;
 }
 
+hr{
+  color: #88888885;
+}
 
+.link:hover{
+color: #fdcf43;
+transition: all 0.3s ease-in-out;
+}
 .inner-body
 {
     
@@ -23,44 +31,31 @@ background-position: center;
 width: 100vw;
 height: 100vh;
 }
-div.gallery {
-    border: 1px solid #ccc;
-  }
-  
+
   div.gallery:hover {
-    border: 1px solid #777;
+    scale: 1.01;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+ 
+    box-shadow: 10px 10px 8px #88888885;
   }
   
   div.gallery img {
     width: 100%;
     height: auto;
   }
+   
   
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
+ .desc{
+  font-size: 0.75rem;
+ }
+
   
   .responsive {
     padding: 0 6px;
     margin: 6px 0;
-    width: 20%;
   }
-  
-  @media only screen and (max-width: 1000px) {
-    .responsive {
-      width: 33.33%;
-    
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
- 
-      width: 100%;
-    } 
-   
-  }
+
   
   
   
@@ -89,4 +84,31 @@ div.gallery {
   cursor: pointer;
   right:  -6px;
   top: -10px;
+}
+
+
+.detail-img:hover{
+  
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.gallery-img{
+  overflow: auto;
+}
+
+
+.gallery-container {
+  max-width: 100%; /* Adjust this value according to your design */
+  overflow-x: auto;
+  white-space: nowrap;
+ 
+}
+
+.responsive {
+  display: inline-block;
+}
+
+#related-g-img{
+  width: 250px;
 }
