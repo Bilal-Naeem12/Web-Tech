@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/navbar.css">
 </head>
 <body>
     
     <div class="header  bg-transparent position-sticky top-0  w-100  z-3   ">
         <div
           class="navbar  d-flex  fs-   bg-light shadow-lg      justify-content-around   text-dark align-items-center  text-light gap-5    ">
-          <div class="logo">
+          <a class="logo" href="/">
             <span><img src="/images/logoside.jpg" alt="" id="sideLogo"> <img src="/images/logo.png" ></span>  
-          </div>
+          </a>
           <div class="clicklink fw-semibold  d-none  p  d-md-flex   gap-3  justify-content-center align-items-center ">
            <a href="/"><div class="link">Home</div></a> 
            <a href="/products"><div class="link">Products</div></a>
@@ -21,14 +22,22 @@
             <div></div>
           </div>
           <div class="icons d-flex gap-3">
-            <i class="fa-solid fa-user"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-solid fa-bars"></i>
-  
+         <button  class="btn border-0  ">   <i class="fa-solid fa-user"></i></button> 
+         <button id="toggleBtn" class="btn border-0  ">    <i class="fa-solid fa-cart-shopping"></i></button> 
+         <button  class=" btn border-0  d-md-none   "> <i class="fa-solid fa-bars"></i> </button>
+         <div id="sidebar" class="sidebar">
+             <!-- Content of the sliding div goes here -->
+             <%- include("./components/sideBoxCart")  %>
+         </div>
           </div>
+          <div id="overlay"></div>
         </div>
       
         
       </div>
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="/scripts/navbar.js"></script>
+    
 </body>
 </html>

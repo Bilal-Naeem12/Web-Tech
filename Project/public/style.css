@@ -9,9 +9,12 @@ a{
   cursor: pointer;
 }
 
+
+
 hr{
   color: #88888885;
 }
+
 
 .link:hover{
 color: #fdcf43;
@@ -111,4 +114,8 @@ height: 100vh;
 
 #related-g-img{
   width: 250px;
+}
+
+.footer{
+  height: 500px;
 }

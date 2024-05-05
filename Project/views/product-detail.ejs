@@ -21,18 +21,18 @@
 <div class="main container ">
     <div class=" d-flex flex-column  flex-md-row    gap-5 m-5">
     <div class="left w-50  ">
-<img class="w-100 detail-img" src="<%= data.product.image_url %>" alt="">
+<img class="w-100 detail-img" src="<%= product.image_url %>" alt="">
     </div>
 
 
 <div class="border-0 border-end "></div>
 
     <div class="right p-3  d-flex flex-column  h-100 w-100 ">
-        <h2><%= data.product.brand %></h2>
+        <h2><%= product.brand %></h2>
         <hr>
-<h5 class="fw-normal       "><%= data.product.title %></h5>
+<h5 class="fw-normal       "><%= product.title %></h5>
 <hr>
-<div class="price fs-5 fw-semibold   text-danger ">Rs <%= data.product.price %></div>
+<div class="price fs-5 fw-semibold   text-danger ">Rs <%= product.price %></div>
 <hr>
 <div>
     Brand New
@@ -56,7 +56,11 @@
     03214322638
 </div>
 <hr>
-<button type="button"   class="btn btn-warning w-25  border broder-black  ">Add to Cart</button>
+
+<button type="button"    class="btn btn-warning w-25  add-to-cart border broder-black  "   data-product-id="<%= product.id %>"
+    data-product-title="<%= product.title %>"
+    data-product-image="<%= product.image_url %>"
+    data-product-price="<%= product.price %>" >Add to Cart</button>
 <div class="d-flex align-items-center my-4  ">
     <span class="fs-6 fw-semibold  " >Pay Via:</span>
     <div class="companies w-50  ">
@@ -73,24 +77,11 @@
     <h2>Related Products</h2>
     <div class="gallery-img d-flex  flex-md-row flex-column align-items-center gallery-container">
         
-               <% data.products.forEach(product => { %>
-                <a href="/products/<%= product.id %>">
-                <div class="responsive  ">
-                <div id="related-g-img" class="gallery d-flex  flex-column gap-2 p-2 position-relative border">
-                    <div class="discount px-2 py-1 bg-danger position-absolute top-0 start-0 text-white border-0 fs-5">49%</div>
-                    <img src="<%= product.image_url %>" alt="Forest">
-                    <div class="brand text-center fs-5 fw-semibold"><%= product.brand %></div>
-                    <div class="desc text-center text-secondary overflow-hidden   "><%= product.title %></div>
-                    <div class="price text-center fs-6 fw-bold text-danger">Rs <%= product.price %></div>
-                    <button type="button" class="btn btn-warning w-50 m-auto border ">Add to Cart</button>
-                </div>
-            </div>
-        </a>
-        <% }) %>
-    </div>
+        <%- include("./components/card", { products: products }) %>
 </div>
 </div>
-
+</div>
+<%- include("footer")  %>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

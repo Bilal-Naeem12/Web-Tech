@@ -10,7 +10,7 @@ router.get('/:id', async function(req, res) {
   try {
     const products = await Watches.find().limit(10)
     const product = await Watches.findById(req.params.id)
-    res.render('product-detail',{data : {products,product}});
+    res.render('product-detail',{products,product});
   } catch (error) {
 
   }
