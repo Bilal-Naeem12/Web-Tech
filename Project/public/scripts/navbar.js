@@ -2,46 +2,55 @@
 function loadCart(){
 
     let storedCart = $.cookie('cart');
-    let cart = [];
-    
-    // Parse the stored JSON back into an array
-    if (storedCart) {
-        cart = JSON.parse(storedCart);
-    }
-    // Save the updated cart back to localStorage
-    $.cookie('cart', JSON.stringify(cart));
-    
-    
-    cart.forEach(element => {
-        console.log(element)
+   let cart = [];
+
+
+if (storedCart) {
+    cart = JSON.parse(storedCart);
+}
+
+cartCode(cart)
+}
+
+function cartCode(cart){
+    total = 0
+   
+    let uniqueItemIds = new Set();
+
+// Iterate over the cart array
+cart.forEach(element => { 
+    total +=  Number.parseInt(element.price)
+    // Check if the current item's ID is already in the set
+    if (!uniqueItemIds.has(element.id)) {
+        // If not, add the item's ID to the set and append the cart card
+        uniqueItemIds.add(element.id);
+        let count = findItemFrequency(cart, element.id)
         var newCartItem = `
-        <div class="cart-card d-flex justify-content-between  w-100 gap-4  ">
-        <img src="${element.image_url}" alt="" class="w-25 h-100  ">
-        <div class="d-flex flex-column w-75 ">
-            <div class="fs-6 fw-medium     ">
-            ${element.title}
+            <div class="cart-card d-flex justify-content-between w-100 gap-4">
+                <img src="${element.image_url}" alt="" class="w-25 h-100">
+                <div class="d-flex flex-column w-75">
+                    <div class="fs-6 fw-medium">${element.title}</div>
+                    <div class="fs-6 fw-light text-secondary">
+                        ${count} x <span class="text-danger">Rs ${element.price * count}</span>
+                    </div>
+                </div>
+                <button class="delete-item-cart btn border-0 align-self-start" data-product-id="${element.id}">
+                    <i class="fa-solid fa-circle-xmark text-secondary"></i>
+                </button>
             </div>
-            <div class="fs-6 fw-light text-secondary ">
-                1 x <span class="text-danger ">Rs ${element.price}</span>
-            </div>
-           
-        </div>
-        
-        <button  class="delete-item-cart btn border-0 align-self-start  ">  <i class="fa-solid fa-circle-xmark text-secondary"></i></button>
-      </div>
-          
         `;
-    
-        // Append the new cart item to the cart card list
         $('.cart-card-list').append(newCartItem);
-  
+    }
 });
+console.log(total)
+$("#totalPrice").text(total)
+
 }
 
 $(document).ready(function(){
 
-
     loadCart()
+
     $('#toggleBtn').click(function(){
         $('#sidebar').toggleClass('show-sidebar');
         $('#overlay').toggle(); 
@@ -61,25 +70,45 @@ $(document).ready(function(){
         }
     });
     
-    
+  
     $(document).on('click', '.delete-item-cart', function(e){
-    
+       
         e.stopPropagation();
         
-        $(this).closest('.cart-card').remove();
+    var productId = $(this).attr('data-product-id');
+    
+    let storedCart = $.cookie('cart');
+    let total = 0 
+    let cart = [];
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+        console.log("Before filtering:", cart);
+        cart = cart.filter(item => {
+            console.log("Item ID:", item.id);
+            console.log("Product ID:", productId);
+            return item.id !== productId;
+        });
+        console.log("After filtering:", cart);
+    }
+    cart.forEach(element =>  total +=  Number.parseInt(element.price))
+    $("#totalPrice").text(total)
+
+    $.cookie('cart', JSON.stringify(cart), { path: '/' });
+    
+    $(this).closest('.cart-card').remove();
     });
 
     $(document).on('click', '.add-to-cart', function(e){
         e.preventDefault();
-       
-        
+        let count = 1 
         var productImage = $(this).attr('data-product-image');
         var productTitle = $(this).attr('data-product-title');
         var productPrice =   $(this).attr('data-product-price');
         var productBrand =   $(this).attr('data-product-brand');
         var productId =   $(this).attr('data-product-id');
+
         let item = {
-            "id": productId,
+            "id":productId,
             "title": productTitle,
             "image_url": productImage,
             "price": productPrice,
@@ -90,44 +119,30 @@ $(document).ready(function(){
 // Retrieve cart from cookie
 let storedCart = $.cookie('cart');
 let cart = [];
-
-// Parse the stored JSON back into an array
 if (storedCart) {
     cart = JSON.parse(storedCart);
 }
-// Add the item to the cart array
-cart.push(item);
-console.log(cart)
 
-// Save the updated cart back to localStorage
-$.cookie('cart', JSON.stringify(cart));
+    cart.push(item);
 
+$.cookie('cart', JSON.stringify(cart),{ path: '/' });
+$('.cart-card-list').empty();
 
-cart.forEach(element => {
-    console.log(element)
-    var newCartItem = `
-    <div class="cart-card d-flex justify-content-between  w-100 gap-4  ">
-    <img src="${element.image_url}" alt="" class="w-25 h-100  ">
-    <div class="d-flex flex-column w-75 ">
-        <div class="fs-6 fw-medium     ">
-        ${element.title}
-        </div>
-        <div class="fs-6 fw-light text-secondary ">
-            1 x <span class="text-danger ">Rs ${element.price}</span>
-        </div>
-       
-    </div>
-    
-    <button  class="delete-item-cart btn border-0 align-self-start  ">  <i class="fa-solid fa-circle-xmark text-secondary"></i></button>
-  </div>
-      
-    `;
-
-    // Append the new cart item to the cart card list
-    $('.cart-card-list').append(newCartItem);
-});
-        // Create a new cart card
+cartCode(cart)// Create a new cart card
        
     });
 
 });
+
+
+function findItemFrequency(cart, itemToFind) {
+    let frequency = 0;
+    for (let i = 0; i < cart.length; i++) {
+        const currentItem = cart[i];
+        // Check if the current item matches the itemToFind
+        if (currentItem.id === itemToFind ) {
+            frequency++;
+        }
+    }
+    return frequency;
+}
