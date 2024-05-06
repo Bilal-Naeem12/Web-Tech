@@ -24,6 +24,8 @@ function handle_error(){
   
 }
 
+
+
 function truncateTitle(title) {
     const words = title.split(' ');
     if (words.length > 20) {
@@ -34,7 +36,7 @@ function truncateTitle(title) {
 $(document).ready(function (){
 
     $("#send-btn").click(handle_error);
-  
+    
   
 
  
