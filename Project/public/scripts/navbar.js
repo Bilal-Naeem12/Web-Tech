@@ -8,30 +8,25 @@ function loadCart(){
 if (storedCart) {
     cart = JSON.parse(storedCart);
 }
-
+let cartlen =0
+cart.forEach(item => cartlen += item.quantity)
+$(".badge").text(cartlen)
 cartCode(cart)
 }
 
 function cartCode(cart){
     total = 0
-   
-    let uniqueItemIds = new Set();
 
 // Iterate over the cart array
 cart.forEach(element => { 
     total +=  Number.parseInt(element.price)
-    // Check if the current item's ID is already in the set
-    if (!uniqueItemIds.has(element.id)) {
-        // If not, add the item's ID to the set and append the cart card
-        uniqueItemIds.add(element.id);
-        let count = findItemFrequency(cart, element.id)
         var newCartItem = `
             <div class="cart-card d-flex justify-content-between w-100 gap-4">
                 <img src="${element.image_url}" alt="" class="w-25 h-100">
                 <div class="d-flex flex-column w-75">
                     <div class="fs-6 fw-medium">${element.title}</div>
                     <div class="fs-6 fw-light text-secondary">
-                        ${count} x <span class="text-danger">Rs ${element.price * count}</span>
+                        ${element.quantity} x <span class="text-danger">Rs ${element.price * element.quantity}</span>
                     </div>
                 </div>
                 <button class="delete-item-cart btn border-0 align-self-start" data-product-id="${element.id}">
@@ -40,7 +35,7 @@ cart.forEach(element => {
             </div>
         `;
         $('.cart-card-list').append(newCartItem);
-    }
+  
 });
 console.log(total)
 $("#totalPrice").text(total)
@@ -89,32 +84,29 @@ $(document).ready(function(){
             return item.id !== productId;
         });
         console.log("After filtering:", cart);
-    }
+    } let cartlen =0
+    cart.forEach(item => cartlen += item.quantity)
+    $(".badge").text(cartlen)
     cart.forEach(element =>  total +=  Number.parseInt(element.price))
     $("#totalPrice").text(total)
 
     $.cookie('cart', JSON.stringify(cart), { path: '/' });
-    
+  
     $(this).closest('.cart-card').remove();
     });
 
-    $(document).on('click', '.add-to-cart', function(e){
+
+
+
+$(document).on('click', '.add-to-cart', function(e){
         e.preventDefault();
-        let count = 1 
+       
         var productImage = $(this).attr('data-product-image');
         var productTitle = $(this).attr('data-product-title');
         var productPrice =   $(this).attr('data-product-price');
         var productBrand =   $(this).attr('data-product-brand');
         var productId =   $(this).attr('data-product-id');
 
-        let item = {
-            "id":productId,
-            "title": productTitle,
-            "image_url": productImage,
-            "price": productPrice,
-            "brand": productBrand
-        };
-    
        // Retrieve cart from cookie
 // Retrieve cart from cookie
 let storedCart = $.cookie('cart');
@@ -123,26 +115,35 @@ if (storedCart) {
     cart = JSON.parse(storedCart);
 }
 
-    cart.push(item);
+
+let index = cart.findIndex(item => item.id === productId);
+if (index !== -1) { 
+    cart[index] = {
+        "id": productId,
+        "title": productTitle,
+        "image_url": productImage,
+        "price": productPrice,
+        "brand": productBrand,
+        "quantity": cart[index].quantity + 1 
+    };
+} else { 
+    cart.push({
+        "id": productId,
+        "title": productTitle,
+        "image_url": productImage,
+        "price": productPrice,
+        "brand": productBrand,
+        "quantity": 1 
+    });
+}
 
 $.cookie('cart', JSON.stringify(cart),{ path: '/' });
 $('.cart-card-list').empty();
-
+let cartlen =0
+cart.forEach(item => cartlen += item.quantity)
+$(".badge").text(cartlen)
 cartCode(cart)// Create a new cart card
        
     });
 
 });
-
-
-function findItemFrequency(cart, itemToFind) {
-    let frequency = 0;
-    for (let i = 0; i < cart.length; i++) {
-        const currentItem = cart[i];
-        // Check if the current item matches the itemToFind
-        if (currentItem.id === itemToFind ) {
-            frequency++;
-        }
-    }
-    return frequency;
-}

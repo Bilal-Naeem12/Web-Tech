@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <% cartjSON.forEach(item => { %>
+    <div class="tbody-data d-flex gap-2 align-items-center py-2  border-bottom  ">
+
+        <div class=" w-75 d-flex align-items-center  ">
+  
+       
+  <div class=""><i class="fa-solid fa-circle-xmark text-secondary fs-3 "></i></div>
+  <div class="img "><img width="90px" src="<%= item.title %>" alt=""></div>
+  <div class="desc fs-6 fw-semibold   ">
+<%= item.title %>
+  </div>
+  </div>
+  <div class="price w-25 fw-semibold  ">
+    Rs <span>    <%= item.price %></span>
+  </div>
+  <div class="quantity w-25 d-flex ">
+   
+  <button class="btn p-2 border border-secondary border-end-0 rounded-0  q-">-</button>
+  <input type="text" class="p-1 border border-secondary border-start-0 border-end-0  text-center q-input  " value="<%= item.quantity %>">
+  <button class="btn p-2 border border-secondary border-start-0 rounded-0  q+">+</button>
+  
+  </div>
+  <div class="subtotal w-25 fw-semibold">
+    Rs <span>
+        <%= item.quantity * item.price %>
+    </span>
+  </div>
+      </div>
+      <% }) %>
+</body>
+</html>

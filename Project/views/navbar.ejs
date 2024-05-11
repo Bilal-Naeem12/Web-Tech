@@ -10,7 +10,7 @@
     
     <div class="header  bg-transparent position-sticky top-0  w-100  z-3   ">
         <div
-          class="navbar  d-flex  fs-   bg-light shadow-lg      justify-content-around   text-dark align-items-center  text-light gap-5    ">
+          class="navbar  d-flex  fs-   bg-light shadow      justify-content-around   text-dark align-items-center  text-light gap-5    ">
           <a class="logo" href="/">
             <span><img src="/images/logoside.jpg" alt="" id="sideLogo"> <img src="/images/logo.png" ></span>  
           </a>
@@ -23,8 +23,10 @@
           </div>
           <div class="icons d-flex gap-3">
          <button  class="btn border-0  ">   <i class="fa-solid fa-user"></i></button> 
-         <button id="toggleBtn" class="btn border-0  ">    <i class="fa-solid fa-cart-shopping"></i></button> 
-         <button  class=" btn border-0  d-md-none   "> <i class="fa-solid fa-bars"></i> </button>
+         <button id="toggleBtn" class="btn border-0  position-relative">    <i class="fa-solid fa-cart-shopping"></i> <span class="position-absolute badge    rounded-pill bg-danger  ">
+       
+          <span class="visually-hidden">unread messages</span></button> 
+         <button  class=" btn border-0  d-md-none   "> <i class="fa-solid fa-bars"></i>   </button>
          <div id="sidebar" class="sidebar">
              <!-- Content of the sliding div goes here -->
              <%- include("./components/sideBoxCart")  %>

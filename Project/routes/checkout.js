@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 var Watches = require("../modal/Watch")
 /* GET users listing. */
-router.get('/', function(req, res) {
-  res.render('cart');
+router.get('/',async function(req, res) {
+  let cart = req.cookies.cart
+  cartjSON = JSON.parse(cart)
+ res.render("checkout",{cartjSON} )
 });
 
 // router.get('/:id', async function(req, res) {

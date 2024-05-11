@@ -2,8 +2,8 @@ var express = require('express');
 var mongoose = require('mongoose')
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
-var cartRouter = require('./routes/cart');
-
+var checkoutRouter = require('./routes/checkout');
+var cookieParser = require('cookie-parser');  
 
 const Watches = require("./modal/Watch")
 
@@ -14,6 +14,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/SemsterProject").then(()=>{
 var app = express();
 app.use(express.static('public'));
 // view engine setup
+app.use(cookieParser());   
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
@@ -21,7 +22,7 @@ app.use(express.json());
 
 app.use('/', indexRouter);
 app.use('/products', productRouter);
-app.use('/cart', cartRouter);
+app.use('/checkout', checkoutRouter);
 
 
 app.get("/db",async (req,res)=>{

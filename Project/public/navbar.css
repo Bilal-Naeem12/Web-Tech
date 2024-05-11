@@ -31,3 +31,9 @@
 .cart-card{
     max-height: 150px;
 }
+
+
+.badge {
+    top: -18% !important;
+    right: -15%;
+}
