@@ -21,3 +21,11 @@
 .middle{
   min-height: 500px;
 }
+
+.right{
+  min-width: 500px;
+}
+
+.q-input{
+  min-width: 40px;
+}

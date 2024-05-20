@@ -19,14 +19,14 @@ function cartCode(cart){
 
 // Iterate over the cart array
 cart.forEach(element => { 
-    total +=  Number.parseInt(element.price)
+    total +=  Number.parseInt(element.price * element.quantity)
         var newCartItem = `
             <div class="cart-card d-flex justify-content-between w-100 gap-4">
                 <img src="${element.image_url}" alt="" class="w-25 h-100">
                 <div class="d-flex flex-column w-75">
                     <div class="fs-6 fw-medium">${element.title}</div>
                     <div class="fs-6 fw-light text-secondary">
-                        ${element.quantity} x <span class="text-danger">Rs ${element.price * element.quantity}</span>
+                        ${element.quantity} x <span class="text-danger">Rs ${element.price}</span>
                     </div>
                 </div>
                 <button class="delete-item-cart btn border-0 align-self-start" data-product-id="${element.id}">
@@ -37,7 +37,6 @@ cart.forEach(element => {
         $('.cart-card-list').append(newCartItem);
   
 });
-console.log(total)
 $("#totalPrice").text(total)
 
 }
@@ -87,7 +86,7 @@ $(document).ready(function(){
     } let cartlen =0
     cart.forEach(item => cartlen += item.quantity)
     $(".badge").text(cartlen)
-    cart.forEach(element =>  total +=  Number.parseInt(element.price))
+    cart.forEach(element =>{  total +=  Number.parseInt(element.price * element.quantity)})
     $("#totalPrice").text(total)
 
     $.cookie('cart', JSON.stringify(cart), { path: '/' });
@@ -107,8 +106,6 @@ $(document).on('click', '.add-to-cart', function(e){
         var productBrand =   $(this).attr('data-product-brand');
         var productId =   $(this).attr('data-product-id');
 
-       // Retrieve cart from cookie
-// Retrieve cart from cookie
 let storedCart = $.cookie('cart');
 let cart = [];
 if (storedCart) {
@@ -119,11 +116,7 @@ if (storedCart) {
 let index = cart.findIndex(item => item.id === productId);
 if (index !== -1) { 
     cart[index] = {
-        "id": productId,
-        "title": productTitle,
-        "image_url": productImage,
-        "price": productPrice,
-        "brand": productBrand,
+        ...cart[index],
         "quantity": cart[index].quantity + 1 
     };
 } else { 

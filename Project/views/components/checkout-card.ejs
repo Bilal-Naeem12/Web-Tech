@@ -26,9 +26,9 @@
   </div>
   <div class="quantity w-25 d-flex ">
    
-  <button class="btn p-2 border border-secondary border-end-0 rounded-0  q-">-</button>
-  <input type="text" class="p-1 border border-secondary border-start-0 border-end-0  text-center q-input  " value="<%= item.quantity %>">
-  <button class="btn p-2 border border-secondary border-start-0 rounded-0  q+">+</button>
+  <button id="substract" class="btn p-2 border border-secondary border-end-0 rounded-0  q-">-</button>
+  <input id="quantity-input" type="text" class="p-1 border border-secondary border-start-0 border-end-0  text-center q-input  " value="<%= item.quantity %>">
+  <button id="add" class="btn p-2 border border-secondary border-start-0 rounded-0  q+">+</button>
   
   </div>
   <div class="subtotal w-25 fw-semibold">
@@ -39,4 +39,6 @@
       </div>
       <% }) %>
 </body>
+<script src="/scripts/checkout.js"></script>
+
 </html>

@@ -33,6 +33,13 @@ app.get("/db",async (req,res)=>{
 })
 
 
+app.post("/addToCart",(req,res)=>{
+
+req.cookies()
+
+})
+
+
 
 app.listen(3000)
 module.exports = app;
