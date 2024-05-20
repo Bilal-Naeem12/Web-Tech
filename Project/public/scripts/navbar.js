@@ -15,8 +15,8 @@ cartCode(cart)
 }
 
 function cartCode(cart){
+    $('.cart-card-list').empty();
     total = 0
-
 // Iterate over the cart array
 cart.forEach(element => { 
     total +=  Number.parseInt(element.price * element.quantity)

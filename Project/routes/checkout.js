@@ -5,7 +5,8 @@ var Watches = require("../modal/Watch")
 router.get('/',async function(req, res) {
   let cart = req.cookies.cart
   cartjSON = JSON.parse(cart)
- res.render("checkout",{cartjSON} )
+  const products = await Watches.find().limit(10)
+ res.render("checkout",{cartjSON,products} )
 });
 
 // router.get('/:id', async function(req, res) {

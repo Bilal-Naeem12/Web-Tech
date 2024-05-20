@@ -27,7 +27,7 @@
 
 
       <div class="middle mt-2 d-flex  gap-1 ">
-        <div class="left w-75 ">
+        <div class="left w-75  ">
           <div class="d-flex flex-column ">
             <div class="thead p-1 d-flex ">
               <div class="fs-6 fw-semibold w-75 ">PRODUCTS</div>
@@ -36,7 +36,7 @@
               <div class="fs-6 fw-semibold w-25 ">SUBTOTAL</div>
             </div>
             <hr>
-            <div class="tbody p-1 d-flex flex-column  ">
+            <div class="tbody p-1 d-flex flex-column overflow-auto  ">
 
 
 
@@ -107,9 +107,9 @@ Shipping
             ">
 
           
-            <input type="text" class="w-75  px-2 " placeholder="State/Country">
-            <input type="text" class="w-75 px-2 " placeholder="City">
-            <input type="text" class="w-75  px-2"  placeholder="Postalcode / Zip">
+            <input type="text" class="w-75  p-2   " placeholder="State/Country">
+            <input type="text" class="w-75 p-2  " placeholder="City">
+            <input type="text" class="w-75  p-2 "  placeholder="Postalcode / Zip">
             
         
           </div>
@@ -121,13 +121,20 @@ Shipping
           <a href="/checkout"><button class="btn btn-warning border-0 w-100 " >CheckOut</button></a>
     </div>  
         </div>
-        
+        <div class="my-4 "> </div>
+        <div id="product-detail-products" class="products d-flex flex-column py-4">
+          <h2>Shop More</h2>
+          <div class="gallery-img d-flex mt-3  flex-md-row flex-column align-items-center gallery-container">
+              
+              <%- include("./components/card", { products: products }) %>
+      </div>
+      </div>
       </div>
 
-
+     
     </div>
 
-
+   
 
     <%- include("footer") %>
 

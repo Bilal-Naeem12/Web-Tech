@@ -1,0 +1,29 @@
+body {
+    height: 100vh;
+    background-image: url("/images/Slider-03.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; /* Necessary for z-index to work */
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Dimming color */
+    z-index: -1; /* Ensure the overlay stays behind the content */
+}
+
+.blur {
+    filter: blur(5px); /* Adjust the blur effect as needed */
+}
+.login-container {
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+
+}

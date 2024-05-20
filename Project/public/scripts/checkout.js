@@ -86,6 +86,11 @@ cartCode(cart)
     $(this).closest('.quantity').find('.q-input').text(totalquantity );
     updateTotal()
   })
+
+
+
+
+
 })
 
 

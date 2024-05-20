@@ -29,3 +29,7 @@
 .q-input{
   min-width: 40px;
 }
+
+.tbody{
+  max-height: 450px;
+}
