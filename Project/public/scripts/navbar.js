@@ -1,6 +1,6 @@
 
 function loadCart(){
-
+   
     let storedCart = $.cookie('cart');
    let cart = [];
 
@@ -44,7 +44,24 @@ $("#totalPrice").text(total)
 $(document).ready(function(){
 
     loadCart()
+    $('#userBtn').on('click', function() {
+        $('#userInfoBox').toggleClass('active'); // Toggle the active class
+    });
 
+    // Close the user info box when clicking outside of it
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('#userBtn, #userInfoBox').length) {
+            $('#userInfoBox').removeClass('active'); // Hide the user info box
+        }
+    });
+
+    // Handle logout
+    $('#logoutBtn').on('click', function() {
+        // Add your logout logic here
+        alert('Logging out...');
+        // Redirect to logout route if needed
+        window.location.href = '/auth/logout'; // Example logout route
+    });
     $('#toggleBtn').click(function(){
         $('#sidebar').toggleClass('show-sidebar');
         $('#overlay').toggle(); 
@@ -139,4 +156,6 @@ cartCode(cart)// Create a new cart card
        
     });
 
+
+   
 });

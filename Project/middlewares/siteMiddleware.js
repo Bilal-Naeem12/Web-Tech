@@ -1,8 +1,8 @@
 module.exports = async function (req, res, next) {
     //in development set default user
-      let User = require("../modal/User");
-      let user = await User.findOne({ email: "hassan@gmail.com" });
-      req.session.user = user;
+      // let User = require("../modal/User");
+      // let user = await User.findOne({ email: "hassan@gmail.com" });
+      // req.session.user = user;
     // comment above code to avoid default user login
     res.flash = function (type, message) {
       req.session.flash = { type, message };

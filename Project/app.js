@@ -27,9 +27,10 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 app.use(session({
-  secret: "It's a secret",
+  secret: 'yourSecretKey', 
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: { secure: false } 
 }));
 app.use(siteMiddleware);
 app.use('/', indexRouter);

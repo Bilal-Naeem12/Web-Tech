@@ -8,38 +8,35 @@
 </head>
 <body>
     
-    <div class="header  bg-transparent position-sticky top-0  w-100  z-3   ">
-        <div
-          class="navbar  d-flex  fs-   bg-light shadow      justify-content-around   text-dark align-items-center  text-light gap-5    ">
-          <a class="logo" href="/">
-            <span><img src="/images/logoside.jpg" alt="" id="sideLogo"> <img src="/images/logo.png" ></span>  
-          </a>
-          <div class="clicklink fw-semibold  d-none  p  d-md-flex   gap-3  justify-content-center align-items-center ">
-           <a href="/"><div class="link">Home</div></a> 
-           <a href="/products"><div class="link">Products</div></a>
-           <a href="#"><div class="link">About</div></a> 
-           <a href="#contact"><div class="link">Contact Us</div></a> 
-            <div></div>
-          </div>
-          <div class="icons d-flex gap-3">
-         <button  class="btn border-0  ">   <i class="fa-solid fa-user"></i></button> 
-         <button id="toggleBtn" class="btn border-0  position-relative">    <i class="fa-solid fa-cart-shopping"></i> <span class="position-absolute badge    rounded-pill bg-danger  ">
-       
-          <span class="visually-hidden">unread messages</span></button> 
-         <button  class=" btn border-0  d-md-none   "> <i class="fa-solid fa-bars"></i>   </button>
-         <div id="sidebar" class="sidebar">
-             <!-- Content of the sliding div goes here -->
-             <%- include("./components/sideBoxCart")  %>
-         </div>
-          </div>
-          <div id="overlay"></div>
+    <div class="header bg-transparent position-sticky top-0 w-100 z-3">
+        <div class="navbar d-flex fs- bg-light shadow justify-content-around text-dark align-items-center text-light gap-5">
+            <a class="logo" href="/">
+                <span><img src="/images/logoside.jpg" alt="" id="sideLogo"> <img src="/images/logo.png"></span>  
+            </a>
+            <div class="clicklink fw-semibold d-none p d-md-flex gap-3 justify-content-center align-items-center">
+                <a href="/"><div class="link">Home</div></a> 
+                <a href="/products"><div class="link">Products</div></a>
+                <a href="#"><div class="link">About</div></a> 
+                <a href="#contact"><div class="link">Contact Us</div></a> 
+            </div>
+            <div class="icons d-flex gap-3">
+                <button id="userBtn" class="btn border-0"> <i class="fa-solid fa-user"></i></button> 
+                <button id="toggleBtn" class="btn border-0 position-relative"> <i class="fa-solid fa-cart-shopping"></i> <span class="position-absolute badge rounded-pill bg-danger"></span> 
+                <button class="btn border-0 d-md-none"> <i class="fa-solid fa-bars"></i></button>
+                <div id="userInfoBox" class="user-info-box z-1  ">
+                    <div class="user-name">User Name</div>
+                    <button id="logoutBtn" class="btn btn-warning ">Logout</button>
+                </div>
+                <div id="sidebar" class="sidebar">
+                    <!-- Content of the sliding div goes here -->
+                    <%- include("./components/sideBoxCart") %>
+                </div>
+            </div>
+            <div id="overlay"></div>
         </div>
-      
-        
-      </div>
+    </div>
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="/scripts/navbar.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/scripts/navbar.js"></script>
 </body>
 </html>
