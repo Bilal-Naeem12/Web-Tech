@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
 router.get("/logout", (req, res) => {
   req.session.user = null;
   res.flash("success", "Logged out Successfully");
-  res.redirect("/login");
+  res.redirect("/auth/login");
 });
 
 
@@ -35,11 +35,11 @@ router.get('/login',async function(req, res) {
     let user = await User.findOne({ email: req.body.email });
     if (!user) {
       res.flash("danger", "User with given email donot exist");
-      return res.redirect("/signup");
+      return res.redirect("login");
     }
     if (user.password != req.body.password) {
       res.flash("danger", "Invalid Password");
-      return res.redirect("/login");
+      return res.redirect("login");
     }
     req.session.user = user;
     res.flash("success", user.name + " Logged In");
