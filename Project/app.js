@@ -1,15 +1,12 @@
 var express = require('express');
 var mongoose = require('mongoose')
 var session = require("express-session");
-var indexRouter = require('./routes/index');
-var productRouter = require('./routes/product');
-var checkoutRouter = require('./routes/checkout');
-var loginRouter = require('./routes/login');
-var signupRouter = require('./routes/signup');
-var authRouter = require('./routes/auth');
-
-var isAuthenticated = require("./middlewares/isAuthenticated");
+var indexRouter = require('./routes/site/index');
+var productRouter = require('./routes/site/product');
+var checkoutRouter = require('./routes/site/checkout');
+var authRouter = require('./routes/site/auth');
 var siteMiddleware = require("./middlewares/siteMiddleware")
+var watchesApiRouter = require("./routes/api/watchAPI");
 var cookieParser = require('cookie-parser');  
 
 const Watches = require("./modal/Watch")
@@ -32,6 +29,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false } 
 }));
+app.use("/",watchesApiRouter);
 app.use(siteMiddleware);
 app.use('/', indexRouter);
 app.use('/products', productRouter);

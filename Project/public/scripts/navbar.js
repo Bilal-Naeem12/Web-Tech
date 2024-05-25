@@ -4,17 +4,25 @@ function loadCart(){
     let storedCart = $.cookie('cart');
    let cart = [];
 
-
+  
 if (storedCart) {
+   
     cart = JSON.parse(storedCart);
 }
 let cartlen =0
 cart.forEach(item => cartlen += item.quantity)
 $(".badge").text(cartlen)
+
 cartCode(cart)
 }
 
 function cartCode(cart){
+    if (cart.length == 0) {
+        $("#chkoutbtn").addClass("disabled")
+    }
+    else{
+        $("#chkoutbtn").removeClass("disabled")
+    }
     $('.cart-card-list').empty();
     total = 0
 // Iterate over the cart array
@@ -42,6 +50,10 @@ $("#totalPrice").text(total)
 }
 
 $(document).ready(function(){
+    $("#chkoutbtn").on('click', function() {
+        window.location.href = "http://localhost:3000/checkout";
+    });
+
 
     loadCart()
     $('#userBtn').on('click', function() {

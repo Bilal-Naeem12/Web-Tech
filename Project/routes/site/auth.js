@@ -1,6 +1,6 @@
 const express = require("express");
 let router = express.Router();
-let User = require("../modal/User");
+let User = require("../../modal/User");
 
 router.get("/signup", (req, res) => {
   res.render("signup");
@@ -13,7 +13,7 @@ router.post("/signup", async (req, res) => {
     //   message: "User with given name already exist",
     // };
     res.flash("danger", "User Already Exist");
-    return res.redirect("/signup");
+    return res.redirect("/auth/signup");
   }
   user = new User(req.body);
   await user.save();
@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
 router.get("/logout", (req, res) => {
   req.session.user = null;
   res.flash("success", "Logged out Successfully");
-  res.redirect("/login");
+  res.redirect("/auth/login");
 });
 
 
