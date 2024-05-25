@@ -1,20 +1,28 @@
 
 function loadCart(){
-
+   
     let storedCart = $.cookie('cart');
    let cart = [];
 
-
+  
 if (storedCart) {
+   
     cart = JSON.parse(storedCart);
 }
 let cartlen =0
 cart.forEach(item => cartlen += item.quantity)
 $(".badge").text(cartlen)
+
 cartCode(cart)
 }
 
 function cartCode(cart){
+    if (cart.length == 0) {
+        $("#chkoutbtn").addClass("disabled")
+    }
+    else{
+        $("#chkoutbtn").removeClass("disabled")
+    }
     $('.cart-card-list').empty();
     total = 0
 // Iterate over the cart array
@@ -42,9 +50,30 @@ $("#totalPrice").text(total)
 }
 
 $(document).ready(function(){
+    $("#chkoutbtn").on('click', function() {
+        window.location.href = "http://localhost:3000/checkout";
+    });
+
 
     loadCart()
+    $('#userBtn').on('click', function() {
+        $('#userInfoBox').toggleClass('active'); // Toggle the active class
+    });
 
+    // Close the user info box when clicking outside of it
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('#userBtn, #userInfoBox').length) {
+            $('#userInfoBox').removeClass('active'); // Hide the user info box
+        }
+    });
+
+    // Handle logout
+    $('#logoutBtn').on('click', function() {
+        // Add your logout logic here
+        alert('Logging out...');
+        // Redirect to logout route if needed
+        window.location.href = '/auth/logout'; // Example logout route
+    });
     $('#toggleBtn').click(function(){
         $('#sidebar').toggleClass('show-sidebar');
         $('#overlay').toggle(); 
@@ -139,4 +168,6 @@ cartCode(cart)// Create a new cart card
        
     });
 
+
+   
 });

@@ -1,6 +1,45 @@
 
+
 $(document).ready(function () {
 
+  $("#chkoutBtn").on("click", function(e) {
+   
+    let valid = true;
+
+    // Check all input fields
+    $(".input").each(function() {
+        if ($(this).val() === "") {
+            $(this).css("border", "2px solid red");
+            valid = false;
+        } else {
+            $(this).css("border", ""); // Reset border if filled
+        }
+    });
+
+    // If all fields are valid, proceed with AJAX request
+    if (valid) {
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:3000/checkout", // Replace with your actual endpoint
+            data: {
+                state: $("input[placeholder='State/Country']").val(),
+                city: $("input[placeholder='City']").val(),
+                postalcode: $("input[placeholder='Postalcode / Zip']").val(),
+            },
+            success: function(response) {
+          
+            
+                    window.location.href = "http://localhost:3000/products/page";
+               
+            },
+            error: function(error) {
+                // Handle error response
+                console.log(error);
+            }
+        });
+    }
+});
+  
  
   $(document).on('click', '.delete-item-cart', function(e){
        
