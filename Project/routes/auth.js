@@ -1,6 +1,6 @@
 const express = require("express");
 let router = express.Router();
-let User = require("../modal/User");
+let User = require("../../modal/User");
 
 router.get("/signup", (req, res) => {
   res.render("signup");
@@ -13,7 +13,7 @@ router.post("/signup", async (req, res) => {
     //   message: "User with given name already exist",
     // };
     res.flash("danger", "User Already Exist");
-    return res.redirect("/signup");
+    return res.redirect("/auth/signup");
   }
   user = new User(req.body);
   await user.save();
@@ -35,16 +35,17 @@ router.get('/login',async function(req, res) {
     let user = await User.findOne({ email: req.body.email });
     if (!user) {
       res.flash("danger", "User with given email donot exist");
-      return res.redirect("login");
+      return res.redirect("/auth/signup");
+      
     }
     if (user.password != req.body.password) {
+  
       res.flash("danger", "Invalid Password");
-      return res.redirect("login");
+      return res.redirect("/auth/login");
     }
     req.session.user = user;
+    console.log(req.session.user)
     res.flash("success", user.name + " Logged In");
-    
-    
     res.redirect("/");
 
 
