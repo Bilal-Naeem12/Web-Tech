@@ -14,7 +14,6 @@ module.exports = async function (req, res, next) {
     // }
     const authHeader = req.headers.authorization;
 
-    console.log(authHeader)
     if (authHeader && authHeader.startsWith('Bearer ')) {
 
         const authToken = authHeader.split(' ')[1];
