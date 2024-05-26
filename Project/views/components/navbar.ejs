@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
     <link rel="stylesheet" href="/navbar.css">
-</head>
-<body>
+
     
     <div class="header bg-transparent position-sticky top-0 w-100 z-3">
         <div class="navbar d-flex fs- bg-light shadow justify-content-around text-dark align-items-center text-light gap-5">
@@ -28,10 +22,15 @@
                     <div class="user-name"><%= user.name %></div>
                     <button id="logoutBtn" class="btn btn-warning ">Logout</button>
                 </div>
-             <% } %>   
+           <% } else if (!user) { %>
+
+            <div id="userInfoBox" class="user-info-box z-1  ">
+              <a href="http://localhost:3000/auth/login"><button id="logoutBtn" class="btn btn-warning ">Login</button></a>  
+            </div>
+            <% } %>
                 <div id="sidebar" class="sidebar">
                     <!-- Content of the sliding div goes here -->
-                    <%- include("./components/sideBoxCart") %>
+                    <%- include("sideBoxCart") %>
                 </div>
             </div>
 
@@ -49,5 +48,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    
     <script src="/scripts/navbar.js"></script>
-</body>
-</html>

@@ -18,7 +18,7 @@
 <body>
 
 
-  <%- include("navbar") %>
+  <%- include("./components/navbar") %>
 
     <div class="main container mb-5 ">
       <div class="text-warning d-flex align-self-center justify-content-center my-5  ">
@@ -40,55 +40,8 @@
 
 
 
-              <% cartjSON.forEach(item=> { %>
-                <div class="tbody-data d-flex gap-2 align-items-center py-2  border-bottom  ">
-
-                  <div class=" w-75 d-flex align-items-center  ">
-                    <div id="pid" productId="<%= item.id %>"></div>
-
-                    <div class="delete-item-cart" data-product-id="<%= item.id %>"><i class="fa-solid fa-circle-xmark text-secondary fs-3 "></i></div>
-                    <div class="img "><img width="90px" src="<%= item.image_url %>" alt=""></div>
-                    <div class="desc fs-6 fw-semibold   ">
-                      <%= item.title %>
-                    </div>
-                  </div>
-                  <div class="price w-25 fw-semibold  ">
-                    Rs <span>
-                      <%= item.price %>
-                    </span>
-                  </div>
-                  <div class="quantity w-25 d-flex ">
-
-                    <button class="btn p-2 border border-secondary border-end-0 rounded-0  q- substract "
-                    data-product-id="<%= item.id %>"
-                    data-product-title="<%= item.title %>"
-                    data-product-image="<%= item.image_url %>"
-                    data-product-price="<%= item.price %>"   data-product-brand="<%= item.brand %>"
-                    data-product-quantity="<%= item.quantity %>"
-                    >-</button>
-
-
-                    <div id="quantity-input" type="text"
-                      class="p-1 border border-secondary border-start-0 border-end-0  text-center q-input  d-flex justify-content-center align-items-center "
-                    ><%= item.quantity %></div>  
-
-
-                    <button class="btn p-2 border border-secondary border-start-0 rounded-0  q+ add"
-                    data-product-id="<%= item.id %>"
-                    data-product-title="<%= item.title %>"
-                    data-product-image="<%= item.image_url %>"
-                    data-product-price="<%= item.price %>"   data-product-brand="<%= item.brand %>"
-                    data-product-quantity="<%= item.quantity %>"
-                    >+</button>
-
-                  </div>
-                  <div class="subtotal w-25 fw-semibold">
-                    Rs <span class="subtotalValue">
-                      <%= item.quantity * item.price %>
-                    </span>
-                  </div>
-                </div>
-                <% }) %>
+              <%- include("./components/checkout-card",{cartjSON:cartjSON}) %>
+        
             </div>
           </div>
         </div>
@@ -136,26 +89,9 @@ Shipping
 
    
 
-    <%- include("footer") %>
+    <%- include("./components/footer") %>
 
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-  integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-  integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
-  integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="/scripts/checkout.js"></script>
 
 </html>

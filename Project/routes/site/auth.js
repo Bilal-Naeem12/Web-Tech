@@ -40,7 +40,7 @@ router.get('/login',async function(req, res) {
 
   router.post('/login',async function(req, res) {
     let user = await User.findOne({ email: req.body.email });
-    console.log(res.headers);
+   
     if (!user) {
       res.flash("danger", "User with given email donot exist");
       return res.redirect("/auth/login");
@@ -57,7 +57,10 @@ router.get('/login',async function(req, res) {
     }
     try {
       const token = jwt.sign(playload,"helloooooo");
-      res.cookie("Authorization",token)
+      console.log("Generated token:", token);
+      // res.cookie("Authorization",token)
+      res.setHeader('Authorization', `Bearer ${token}`);
+  
       req.session.user = user;
     } catch (error) {
       res.send({message:"cannt authenticate"})
