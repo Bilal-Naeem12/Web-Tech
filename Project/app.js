@@ -9,8 +9,6 @@ var siteMiddleware = require("./middlewares/siteMiddleware")
 var watchesApiRouter = require("./routes/api/watchAPI");
 var  jwtAuth  = require("./middlewares/jwtAuth")
 var cookieParser = require('cookie-parser');  
-const jwt = require("jsonwebtoken")
-const user = require("./modal/User");
 
 
 mongoose.connect("mongodb://127.0.0.1:27017/SemsterProject").then(()=>{
