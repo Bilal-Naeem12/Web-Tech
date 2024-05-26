@@ -7,9 +7,11 @@ var checkoutRouter = require('./routes/site/checkout');
 var authRouter = require('./routes/site/auth');
 var siteMiddleware = require("./middlewares/siteMiddleware")
 var watchesApiRouter = require("./routes/api/watchAPI");
+var  jwtAuth  = require("./middlewares/jwtAuth")
 var cookieParser = require('cookie-parser');  
+const jwt = require("jsonwebtoken")
+const user = require("./modal/User");
 
-const Watches = require("./modal/Watch")
 
 mongoose.connect("mongodb://127.0.0.1:27017/SemsterProject").then(()=>{
   console.log("connected")
@@ -29,8 +31,14 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false } 
 }));
-app.use("/",watchesApiRouter);
 app.use(siteMiddleware);
+
+
+
+
+
+app.use("/api",jwtAuth,watchesApiRouter);
+
 app.use('/', indexRouter);
 app.use('/products', productRouter);
 app.use('/checkout', checkoutRouter);

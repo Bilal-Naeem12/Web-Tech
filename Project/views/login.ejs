@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/login.css">
 </head>
 <body>
+    
     <div class="background-overlay"></div>
     <div class="d-flex justify-content-center align-items-center vh-100">
         <div class="login-container  shadow ">
             <h1 class="text-center my-2">Login</h1>
             <% if (flash) { %>
-                <div     class="text-center my-2 text-danger ">
-                    <% flash.message %>
-                </div>
+                
+                <h5 class="text-center my-2 text-danger"> <%= flash.message %></h5>     
                <% } %>
             
             <form action="" method="POST">
@@ -34,4 +34,5 @@
         </div>
     </div>
 </body>
+
 </html>

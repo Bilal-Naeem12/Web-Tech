@@ -69,9 +69,6 @@ $(document).ready(function(){
 
     // Handle logout
     $('#logoutBtn').on('click', function() {
-        // Add your logout logic here
-        alert('Logging out...');
-        // Redirect to logout route if needed
         window.location.href = '/auth/logout'; // Example logout route
     });
     $('#toggleBtn').click(function(){

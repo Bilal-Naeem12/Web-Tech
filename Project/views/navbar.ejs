@@ -23,19 +23,29 @@
                 <button id="userBtn" class="btn border-0"> <i class="fa-solid fa-user"></i></button> 
                 <button id="toggleBtn" class="btn border-0 position-relative"> <i class="fa-solid fa-cart-shopping"></i> <span class="position-absolute badge rounded-pill bg-danger"></span> 
                 <button class="btn border-0 d-md-none"> <i class="fa-solid fa-bars"></i></button>
+             <% if (user) { %>
                 <div id="userInfoBox" class="user-info-box z-1  ">
-                    <div class="user-name">User Name</div>
+                    <div class="user-name"><%= user.name %></div>
                     <button id="logoutBtn" class="btn btn-warning ">Logout</button>
                 </div>
+             <% } %>   
                 <div id="sidebar" class="sidebar">
                     <!-- Content of the sliding div goes here -->
                     <%- include("./components/sideBoxCart") %>
                 </div>
             </div>
+
+        
             <div id="overlay"></div>
         </div>
+        <% if (flash) { %>
+            <div class="alert alert-<%-flash.type%> alert-dismissible fade show" role="alert">
+                <%= flash.message %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+           <% } %>
     </div>
-    
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    
     <script src="/scripts/navbar.js"></script>

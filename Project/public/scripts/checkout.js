@@ -16,11 +16,11 @@ $(document).ready(function () {
         }
     });
 
-    // If all fields are valid, proceed with AJAX request
+   
     if (valid) {
         $.ajax({
             method: "POST",
-            url: "http://localhost:3000/checkout", // Replace with your actual endpoint
+            url: "http://localhost:3000/checkout", 
             data: {
                 state: $("input[placeholder='State/Country']").val(),
                 city: $("input[placeholder='City']").val(),

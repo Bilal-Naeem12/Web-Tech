@@ -11,7 +11,7 @@ router.get('/',isAuthenticated,async function(req, res) {
  res.render("checkout",{cartjSON,products} )
 });
 
-router.post('/',async function(req, res) {
+router.post('/',isAuthenticated,async function(req, res) {
   let cart = req.cookies.cart
   cartjSON = JSON.parse(cart)
 

@@ -4,7 +4,7 @@ var Watches = require("../../modal/Watch")
 /* GET users listing. */
 router.get("/page/:page?", async (req, res) => {
   let page = Number(req.params.page) ? Number(req.params.page) : 1
-  let pageSize = 8;
+  let pageSize = 16;
   let products = await Watches.find()
     .skip(pageSize * (page - 1))
     .limit(pageSize);
