@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/checkout.css">
+</head>
+
+<body>
+
+
+  <%- include("./components/navbar") %>
+
+    <div class="main container mb-5 ">
+      <div class="text-warning d-flex align-self-center justify-content-center my-5  ">
+        <h1>SHOPPING CART</h1>
+      </div>
+
+
+      <div class="middle mt-2 d-flex  gap-1 ">
+        <div class="left w-75  ">
+          <div class="d-flex flex-column ">
+            <div class="thead p-1 d-flex ">
+              <div class="fs-6 fw-semibold w-75 ">PRODUCTS</div>
+              <div class="fs-6 fw-semibold w-25">PRICE</div>
+              <div class="fs-6 fw-semibold w-25 ">QUANTITY</div>
+              <div class="fs-6 fw-semibold w-25 ">SUBTOTAL</div>
+            </div>
+            <hr>
+            <div class="tbody p-1 d-flex flex-column overflow-auto  ">
+
+
+
+              <%- include("./components/checkout-card",{cartjSON:cartjSON}) %>
+        
+            </div>
+          </div>
+        </div>
+        <div class="border border-end "></div>
+        <div class="right d-flex flex-column gap-5 p-2 ">
+          <div class="fs-4 fw-semibold text-warning  ">CART TOTALS</div>
+          <div class="fs-4 fw-semibold  d-flex justify-content-between  ">
+            <div class="fs-6 fw-medium text-secondary  ">Subtotal</div>
+            <div class="fs-5 fw-semibold ">Rs <span id="subTotalR">9200</span></div>
+          </div>
+          <div class="d-flex ">
+            <div class="subLeft d-flex flex-column justify-content-center  w-25 text-secondary fw-medium ">
+Shipping
+            </div>
+            <div class="subRight d-flex flex-column  gap-3  align-items-end  w-100 
+            ">
+
+          
+            <input type="text" class="w-75  p-2 input  " placeholder="State/Country"  >
+            <input type="text" class="w-75 p-2  input" placeholder="City" >
+            <input type="text" class="w-75  p-2 input"  placeholder="Postalcode / Zip" >
+            
+        
+          </div>
+          </div>
+          <div class="fs-4 fw-semibold  d-flex justify-content-between  ">
+            <div class="fs-6 fw-medium text-secondary  ">Total</div>
+            <div class="fs-5 fw-semibold ">Rs <span id="TotalR">9200</span></div>
+          </div>
+          <button id="chkoutBtn" class=" btn btn-warning border-0 w-100 " >CheckOut</button>
+    </div>  
+        </div>
+        <div class="my-4 "> </div>
+        <div id="product-detail-products" class="products d-flex flex-column py-4">
+          <h2>Shop More</h2>
+          <div class="gallery-img d-flex mt-3  flex-md-row flex-column align-items-center gallery-container">
+              
+              <%- include("./components/card", { products: products }) %>
+      </div>
+      </div>
+      </div>
+
+     
+    </div>
+
+   
+
+    <%- include("./components/footer") %>
+
+</body>
+
+
+</html>

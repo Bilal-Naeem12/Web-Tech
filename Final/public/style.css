@@ -1,0 +1,120 @@
+*{
+  transition: all 0.5s ease-in-out;
+    margin: 0  ;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+a{
+  all: unset;
+  cursor: pointer;
+}
+
+
+
+hr{
+  color: #88888885;
+}
+
+
+.link:hover{
+color: #fdcf43;
+transition: all 0.3s ease-in-out;
+}
+.inner-body
+{
+    
+    height: 100vh;
+    width: 100%;
+background-image: url(/images/banner.jpg);
+background-size: cover;
+background-position: center;
+}
+
+.spacer{
+width: 100vw;
+height: 100vh;
+}
+
+  div.gallery:hover {
+    scale: 1.01;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+ 
+    box-shadow: 10px 10px 8px #88888885;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+   
+  
+ .desc{
+  font-size: 0.75rem;
+ }
+
+  
+  .responsive {
+    padding: 0 6px;
+    margin: 6px 0;
+  }
+
+  
+  
+  
+  span img{
+  height: 20px;
+ }
+
+ #sideLogo{
+  height: 40px;
+ }
+#id{
+
+  height: 40px;
+}
+
+.error{
+  border: 4px solid rgba(197, 22, 22, 0.592);
+}
+
+.edit-btn{
+  cursor: pointer;
+  right:  30px;
+  top: -10px;
+}
+.delete-btn{
+  cursor: pointer;
+  right:  -6px;
+  top: -10px;
+}
+
+
+.detail-img:hover{
+  
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.gallery-img{
+  overflow: auto;
+}
+
+
+.gallery-container {
+  max-width: 100%; /* Adjust this value according to your design */
+  overflow-x: auto;
+  white-space: nowrap;
+ 
+}
+
+.responsive {
+  display: inline-block;
+}
+
+#related-g-img{
+  width: 250px;
+}
+
+
+

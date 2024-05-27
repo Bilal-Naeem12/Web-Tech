@@ -1,0 +1,52 @@
+<% cartjSON.forEach(item=> { %>
+  <div class="tbody-data d-flex gap-2 align-items-center py-2  border-bottom  ">
+
+    <div class=" w-75 d-flex align-items-center  ">
+      <div id="pid" productId="<%= item.id %>"></div>
+
+      <div class="delete-item-cart" data-product-id="<%= item.id %>"><i class="fa-solid fa-circle-xmark text-secondary fs-3 "></i></div>
+      <div class="img "><img width="90px" src="<%= item.image_url %>" alt=""></div>
+      <div class="desc fs-6 fw-semibold   ">
+        <%= item.title %>
+      </div>
+    </div>
+    <div class="price w-25 fw-semibold  ">
+      Rs <span>
+        <%= item.price %>
+      </span>
+    </div>
+    <div class="quantity w-25 d-flex ">
+
+      <button class="btn p-2 border border-secondary border-end-0 rounded-0  q- substract "
+      data-product-id="<%= item.id %>"
+      data-product-title="<%= item.title %>"
+      data-product-image="<%= item.image_url %>"
+      data-product-price="<%= item.price %>"   data-product-brand="<%= item.brand %>"
+      data-product-quantity="<%= item.quantity %>"
+      >-</button>
+
+
+      <div id="quantity-input" type="text"
+        class="p-1 border border-secondary border-start-0 border-end-0  text-center q-input  d-flex justify-content-center align-items-center "
+      ><%= item.quantity %></div>  
+
+
+      <button class="btn p-2 border border-secondary border-start-0 rounded-0  q+ add"
+      data-product-id="<%= item.id %>"
+      data-product-title="<%= item.title %>"
+      data-product-image="<%= item.image_url %>"
+      data-product-price="<%= item.price %>"   data-product-brand="<%= item.brand %>"
+      data-product-quantity="<%= item.quantity %>"
+      >+</button>
+
+    </div>
+    <div class="subtotal w-25 fw-semibold">
+      Rs <span class="subtotalValue">
+        <%= item.quantity * item.price %>
+      </span>
+    </div>
+  </div>
+  <% }) %>
+
+  
+<script src="/scripts/checkout.js"></script>

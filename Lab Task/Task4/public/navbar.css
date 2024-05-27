@@ -1,0 +1,69 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100%;
+    background-color: #f1f1f1;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.show-sidebar {
+    right: 0;
+}
+
+#overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 99; 
+}
+
+.cart-card-list{
+    height: 60%;
+}
+
+.cart-card{
+    max-height: 150px;
+}
+
+
+.badge {
+    top: -18% !important;
+    right: -15%;
+}
+
+.user-info-box {
+    position: absolute;
+    top: -100px;
+    right: 100px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    opacity: 0;
+    transition: top 1s ease-in-out, right 1s ease-in-out, opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.user-info-box.active {
+    top: 55px;
+    right: 100px;
+    opacity: 1; /* Make sure the opacity is set to 1 when active */
+    z-index: 1;
+}
+
+.user-info-box .user-name {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.user-info-box .btn {
+    width: 100%;
+}
+
