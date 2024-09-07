@@ -44,5 +44,5 @@ app.use('/auth', authRouter);
 
 
 
-app.listen(3000)
+app.listen(5000)
 module.exports = app;
