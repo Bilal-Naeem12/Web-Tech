@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var mongoose = require('mongoose')
 var session = require("express-session");
@@ -11,7 +12,7 @@ var  jwtAuth  = require("./middlewares/jwtAuth")
 var cookieParser = require('cookie-parser');  
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/SemsterProject").then(()=>{
+mongoose.connect(process.env.MONGODB_URI).then(()=>{
   console.log("connected")
 }).catch((e)=>console.log("Error"+e))
 
@@ -44,5 +45,7 @@ app.use('/auth', authRouter);
 
 
 
-app.listen(5000)
+
+app.listen(process.env.PORT)
+
 module.exports = app;
