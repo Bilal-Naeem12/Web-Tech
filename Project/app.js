@@ -12,10 +12,7 @@ var  jwtAuth  = require("./middlewares/jwtAuth")
 var cookieParser = require('cookie-parser');  
 var MongoStore = require('connect-mongo');
 
-mongoose.connect(process.env.MONGODB_URI,{
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(()=>{
+mongoose.connect(process.env.MONGODB_URI).then(()=>{
   console.log("connected")
 }).catch((e)=>console.log("Error"+e))
 
