@@ -10,7 +10,7 @@ var siteMiddleware = require("./middlewares/siteMiddleware")
 var watchesApiRouter = require("./routes/api/watchAPI");
 var  jwtAuth  = require("./middlewares/jwtAuth")
 var cookieParser = require('cookie-parser');  
-
+var MongoStore = require('connect-mongo');
 
 mongoose.connect(process.env.MONGODB_URI).then(()=>{
   console.log("connected")
@@ -28,7 +28,11 @@ app.use(session({
   secret: 'yourSecretKey', 
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } 
+  cookie: { secure: false } ,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI,
+    ttl: 14 * 24 * 60 * 60 // 14 days TTL
+  })
 }));
 app.use(siteMiddleware);
 
