@@ -12,9 +12,9 @@ var  jwtAuth  = require("./middlewares/jwtAuth")
 var cookieParser = require('cookie-parser');  
 var MongoStore = require('connect-mongo');
 
-mongoose.connect(process.env.MONGODB_URI).then(()=>{
-  console.log("connected")
-}).catch((e)=>console.log("Error"+e))
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => console.log("✅ Connected to MongoDB Atlas"))
+.catch((e) => console.log("❌ Connection error:", e));
 const PORT = process.env.PORT || 3000;
 
 var app = express();
@@ -50,7 +50,7 @@ app.use('/auth', authRouter);
 
 
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
 module.exports = app;
