@@ -15,6 +15,7 @@ var MongoStore = require('connect-mongo');
 mongoose.connect(process.env.MONGODB_URI).then(()=>{
   console.log("connected")
 }).catch((e)=>console.log("Error"+e))
+const PORT = process.env.PORT || 3000;
 
 var app = express();
 app.use(express.static('public'));
@@ -49,7 +50,7 @@ app.use('/auth', authRouter);
 
 
 
-
-app.listen(process.env.PORT)
-
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 module.exports = app;
